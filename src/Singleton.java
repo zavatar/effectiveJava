@@ -1,4 +1,5 @@
 /**
+ * a single-element enum type is the best way to implement a singleton
  * Created by zhumeng on 2014/6/8.
  */
 // Enum singleton - the preferred approach

@@ -1,6 +1,7 @@
 import java.lang.Object;
 
 /**
+ * Item 2: Consider a builder when faced with many constructor parameters
  * Created by zhumeng on 2014/6/9.
  */
 public class Building extends Object{
