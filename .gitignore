@@ -219,4 +219,5 @@ pip-log.txt
 ## IntelliJ IDEA
 #############
 *.class
+.gradle/
 .idea/
