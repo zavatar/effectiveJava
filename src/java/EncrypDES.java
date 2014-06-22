@@ -15,7 +15,7 @@ public class EncrypDES {
     private KeyGenerator keygen;
     //SecretKey 负责保存对称密钥
     private SecretKey deskey;
-    //Cipher负责完成加密或解密工作
+    //Cipher 负责完成加密或解密工作
     private Cipher c;
     //该字节数组负责保存加密的结果
     private byte[] cipherByte;
@@ -58,19 +58,5 @@ public class EncrypDES {
         c.init(Cipher.DECRYPT_MODE, deskey);
         cipherByte = c.doFinal(buff);
         return cipherByte;
-    }
-
-    /**
-     * @param args
-     * @throws Exception
-     */
-    public static void main(String[] args) throws Exception {
-        EncrypDES de1 = new EncrypDES();
-        String msg ="我是谁？";
-        byte[] encontent = de1.Encryptor(msg);
-        byte[] decontent = de1.Decryptor(encontent);
-        System.out.println("明文是:" + msg);
-        System.out.println("加密后:" + new String(encontent));
-        System.out.println("解密后:" + new String(decontent));
     }
 }
