@@ -1,0 +1,20 @@
+// example IDL file
+
+namespace AddressBook.Example;
+
+enum PhoneType:byte (bit_flags) { MOBILE = 0, HOME, WORK }
+
+table PhoneNumber { number:string; type:PhoneType = HOME; }
+
+table Person (force_align: 16) {
+  name:string;
+  id:int;
+  email:string;
+  phone:PhoneNumber;
+}
+
+table AddressBook {
+  person:[Person] (id: 0);
+}
+
+root_type AddressBook;
