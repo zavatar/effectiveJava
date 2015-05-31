@@ -9,7 +9,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.andrewkroh.gradle:gradle-protobuf-plugin:0.3.0'
+        classpath 'com.andrewkroh.gradle:gradle-protobuf-plugin:0.4.0'
     } 
 }
 
@@ -25,7 +25,7 @@ repositories {
 
 dependencies {
     compile "org.projectlombok:lombok:1.14.2"
-    compile "com.google.protobuf:protobuf-java:2.5.0"
+    compile "com.google.protobuf:protobuf-java:2.6.1"
     testCompile group: 'junit', name: 'junit', version: '4.+'
 }
 
@@ -34,14 +34,15 @@ protobuf {
     // Explicitly setting protocol buffers version
     // so that the build will fail if this specific
     // version of the compiler is not present.
-    version = '2.5.0'
+    version = '2.6.1'
     outputJava = 'src/main/java'
+    compiler = 'c:/protoc-2.6.1/protoc.exe'
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '1.11'
+    gradleVersion = '2.4'
 }
 
-tasks.withType(Compile) {
+tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"
 }
